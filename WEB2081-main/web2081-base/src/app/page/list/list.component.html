@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh sách sản phẩm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+  <h1 class="text-3xl font-bold mb-8 text-center">Danh sách sản phẩm (dạng bảng)</h1>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white rounded-xl shadow-md overflow-hidden">
+      <thead class="bg-gray-200 text-gray-700">
+        <tr>
+          <th class="py-3 px-4 text-left">ID</th>
+          <th class="py-3 px-4 text-left">Ảnh</th>
+          <th class="py-3 px-4 text-left">Tên sản phẩm</th>
+          <th class="py-3 px-4 text-left">Giá</th>
+          <th class="py-3 px-4 text-left">Màu</th>
+          <th class="py-3 px-4 text-left">Trạng thái</th>
+          <th class="py-3 px-4 text-left">Hành động</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        @for (item of nikes; track $index) {
+        <!-- Một dòng sản phẩm ví dụ -->
+        <tr class="hover:bg-gray-50">
+          <td class="py-3 px-4">{{$index+1}}</td>
+          <td class="py-3 px-4">
+            <img [src]="item.image" alt="Ảnh sản phẩm" class="w-16 h-16 object-cover rounded" />
+          </td>
+          <td class="py-3 px-4">{{item.name}}</td>
+          <td class="py-3 px-4">{{item.price}}₫</td>
+          <td class="py-3 px-4">{{item.color}}</td>
+          <td class="py-3 px-4 text-green-700" [ngClass]="item.status ? 'text-green-700':'text-red-700' ">{{item.status ? 'Còn' : 'Hết'}}</td>
+          <td class="py-3 px-4">
+            <div class="flex space-x-2">
+              <a [routerLink]="['/nike/edit',item.id]" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm">Sửa</a>
+              <button (click)="handleDelete(item.id)" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Xóa</button>
+            </div>
+          </td>
+        </tr>
+      }
+
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

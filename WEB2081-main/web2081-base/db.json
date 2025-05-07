@@ -1,0 +1,30 @@
+{
+  "users": [],
+  "products": [],
+  "nikes": [
+    {
+      "name": "hieu sua",
+      "price": 122,
+      "image": "https://png.pngtree.com/png-vector/20201030/ourlarge/pngtree-cute-teddy-bear-png-image_2383062.jpg",
+      "color": "red",
+      "status": false,
+      "id": 3
+    },
+    {
+      "name": "hieu 2",
+      "price": 122455,
+      "image": "https://png.pngtree.com/png-vector/20201030/ourlarge/pngtree-cute-teddy-bear-png-image_2383062.jpg",
+      "color": "blue",
+      "status": true,
+      "id": 4
+    },
+    {
+      "name": "aaaaa",
+      "price": 111,
+      "image": "https://png.pngtree.com/png-vector/20201030/ourlarge/pngtree-cute-teddy-bear-png-image_2383062.jpg",
+      "color": "red",
+      "status": false,
+      "id": 5
+    }
+  ]
+}
